@@ -9,10 +9,12 @@ const todosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_TODOS:
-      return merge({}, state, ...action.todos);
+      const nextState = {};
+      action.todos.forEach(todo => nextState[todo.id] = todo);
+      return nextState;
     case RECEIVE_TODO: 
       const newTodo = {
-        [action.todo.id]: todo
+        [action.todo.id]: action.todo
       };
       return merge({}, state, newTodo);
     default:

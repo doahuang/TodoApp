@@ -1,18 +1,14 @@
 import { connect } from 'react-redux';
 import TodoList from './todo_list';
-
-import { receiveTodo } from '../../actions/todo_actions';
 import { allTodos } from '../../reducers/selectors';
+import { receiveTodo } from '../../actions/todo_actions';
 
-const mapStateToProps = state => ({
+const msp = state => ({
   todos: allTodos(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mdp = dispatch => ({
   receiveTodo: todo => dispatch(receiveTodo(todo))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList);
+export default connect(msp, mdp)(TodoList);

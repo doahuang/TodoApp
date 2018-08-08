@@ -1,22 +1,23 @@
 {
-  "name": "todos_app",
+  "name": "TodoApp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doahuang/Todos_app.git"
+    "url": "git+https://github.com/doahuang/TodoApp.git"
   },
+  "keywords": [],
   "author": "doahuang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/doahuang/Todos_app/issues"
+    "url": "https://github.com/doahuang/TodoApp/issues"
   },
-  "homepage": "https://github.com/doahuang/Todos_app#readme",
+  "homepage": "https://github.com/doahuang/TodoApp#readme",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -29,9 +30,7 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.16.5"
-  },
-  "devDependencies": {
+    "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   }
 }

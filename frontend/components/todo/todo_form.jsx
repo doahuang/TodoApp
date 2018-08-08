@@ -37,20 +37,22 @@ export default class TodoForm extends React.Component {
     const { title, body } = this.state;
 
     return (
-      <form>
+      <form onSubmit={this.submitTodo}>
         <input 
           type="text" 
           value={title} 
           placeholder='Title' 
           onChange={this.update('title')} 
+          required
         />
         <input 
           type="text" 
           value={body} 
           placeholder='Body' 
           onChange={this.update('body')} 
+          required
         />
-        <button onClick={this.submitTodo}>Create Todo!</button>
+        <button>Create Todo!</button>
       </form>
     );
   }

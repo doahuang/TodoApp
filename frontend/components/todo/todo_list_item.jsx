@@ -12,10 +12,11 @@ export default class TodoListItem extends React.Component {
   toggleTodo(e) {
     e.preventDefault();
 
-    const updatedTodo = merge({}, this.props.todo, {
-      done: !this.props.todo.done
-    })
-    this.props.receiveTodo(updatedTodo);
+    const { todo, receiveTodo } = this.props;
+    const updatedTodo = merge({}, todo, {
+      done: !todo.done
+    });
+    receiveTodo(updatedTodo);
   }
 
   deleteTodo(e) {

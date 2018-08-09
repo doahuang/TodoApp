@@ -6,8 +6,21 @@ export default class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = { 
+      detail: false
+    };
+
+    this.toggleDetail = this.toggleDetail.bind(this);
     this.toggleTodo = this.toggleTodo.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+  }
+
+  toggleDetail(e) {
+    e.preventDefault();
+    
+    this.setState({
+      detail: !this.state.detail
+    });
   }
 
   toggleTodo(e) {
@@ -29,16 +42,18 @@ export default class TodoListItem extends React.Component {
 
   render() {
     const { id, title, body, done } = this.props.todo;
+    let detail;
+    if (this.state.detail) detail = <TodoDetailViewContainer todoId={id} />;
 
     return (
-      <li style={{margin: '10px 0'}}>
-        <strong>{title} - {body} </strong>
+      <li style={{margin: '20px 0'}}>
+        <strong style={{ cursor: 'pointer' }} onClick={this.toggleDetail}>{title} - {body} </strong>
         <button onClick={this.toggleTodo}>
           {done ? 'Undo' : 'Done'}
         </button>
         &nbsp;
         <button onClick={this.deleteTodo}>Delete</button>
-        <TodoDetailViewContainer todoId={id} />
+        { detail }
       </li>
     );
   }

@@ -52,7 +52,7 @@ export default class TodoForm extends React.Component {
           onChange={this.update('body')} 
           required
         />
-        <button>Create Todo!</button>
+        <button>Add Todo</button>
       </form>
     );
   }

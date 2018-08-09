@@ -6,6 +6,7 @@ export default class StepListItem extends React.Component {
     super(props);
 
     this.toggleStep = this.toggleStep.bind(this);
+    this.deleteStep = this.deleteStep.bind(this);
   }
 
   toggleStep(e) {
@@ -18,16 +19,25 @@ export default class StepListItem extends React.Component {
     receiveStep(updatedStep);
   }
 
+  deleteStep(e) {
+    e.preventDefault();
+
+    const { step, removeStep } = this.props;
+    removeStep(step);
+  }
+
   render() {
     const { title, done } = this.props.step;
     let style;
     if (done) style = { textDecoration: 'line-through' };
 
     return (
-      <li style={style}>
-        <span onClick={this.toggleStep}>
-          { title } </span>
-        <button>delete</button>
+      <li>
+        <span onClick={this.toggleStep} style={style}>
+          { title } 
+        </span>
+        &nbsp;
+        <button onClick={this.deleteStep}>Delete</button>
       </li>
     );
   }

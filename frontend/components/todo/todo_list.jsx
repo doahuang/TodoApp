@@ -16,9 +16,10 @@ class TodoList extends React.Component {
     ));
 
     return (
-      <div>
+      <div style={{display: 'grid', justifyContent: 'center'}}>
+        <h1>Todo List</h1>
         <TodoForm receiveTodo={receiveTodo}/>
-        <ul>{ todoItems }</ul>
+        <ul style={{padding: '0', listStyle: 'none'}}>{ todoItems }</ul>
       </div>
     );
   }

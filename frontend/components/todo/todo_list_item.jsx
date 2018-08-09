@@ -1,5 +1,6 @@
 import React from 'react';
 import { merge } from 'lodash';
+import TodoDetailViewContainer from './todo_detail_view_container';
 
 export default class TodoListItem extends React.Component {
   constructor(props) {
@@ -27,16 +28,17 @@ export default class TodoListItem extends React.Component {
   }
 
   render() {
-    const { title, body, done } = this.props.todo;
+    const { id, title, body, done } = this.props.todo;
 
     return (
-      <li>
-        <h3>{title} - {done ? 'completed' : 'in progress'}</h3>
-        <p>{body}</p>
+      <li style={{margin: '10px 0'}}>
+        <strong>{title} - {body} </strong>
         <button onClick={this.toggleTodo}>
           {done ? 'Undo' : 'Done'}
         </button>
+        &nbsp;
         <button onClick={this.deleteTodo}>Delete</button>
+        <TodoDetailViewContainer todoId={id} />
       </li>
     );
   }

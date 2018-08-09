@@ -42,5 +42,17 @@ var testState = {
     title: 'buy soap',
     done: false,
     todoId: 1
+  },
+  3: {
+    id: 3,
+    title: 'walk to store',
+    done: false,
+    todoId: 2
+  },
+  4: {
+    id: 4,
+    title: 'buy shampoo',
+    done: false,
+    todoId: 2
   }
 };

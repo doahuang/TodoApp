@@ -27,14 +27,17 @@ export default class StepListItem extends React.Component {
   }
 
   render() {
-    const { title, done } = this.props.step;
+    const { step: { title, done }, order } = this.props;
     let style;
     if (done) style = { textDecoration: 'line-through' };
 
     return (
       <li>
-        <span onClick={this.toggleStep} style={style}>
-          { title } 
+        <span 
+          onClick={this.toggleStep} 
+          style={style}
+        >
+          { order + 1 }. { title } 
         </span>
         &nbsp;
         <button onClick={this.deleteStep}>Delete</button>

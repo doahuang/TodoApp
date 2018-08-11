@@ -50,7 +50,6 @@ export default class TodoForm extends React.Component {
           value={body} 
           placeholder='Body' 
           onChange={this.update('body')} 
-          required
         />
         <button>Add Todo</button>
       </form>
